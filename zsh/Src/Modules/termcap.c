@@ -42,7 +42,7 @@
 #ifdef HAVE_TGETENT
 
 #ifndef HAVE_BOOLCODES
-static char *boolcodes[] = {
+static char *zsh_boolcodes[] = {
     "bw", "am", "ut", "cc", "xs", "YA", "YF", "YB", "xt", "xn", "eo",
     "gn", "hc", "HC", "km", "YC", "hs", "hl", "in", "YG", "da", "db",
     "mi", "ms", "nx", "xb", "NP", "ND", "NR", "os", "5i", "YD", "YE",
@@ -153,7 +153,7 @@ gettermcap(UNUSED(HashTable ht), const char *name)
     if ((termflags & TERM_UNKNOWN) && (isset(INTERACTIVE) || !init_term()))
 	return NULL;
 
-    
+
     nameu = dupstring(name);
     unmetafy(nameu, &len);
 
